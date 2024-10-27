@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Happy Pizza</title>
+</head>
+
+<body>
+    <header class="head">
+        <h1>Happy&nbsp;<i class="fas fa-pizza-slice"></i>&nbsp;Pizza</h1>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#service">Services</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="side-bar">
+            <i class="fas fa-search" id="search"></i>
+            <i class="fas fa-user" id="login-icon"></i> 
+            <i class="fas fa-user-plus" id="register-icon"></i> 
+            <i class="fas fa-bars" id="bars"></i>
+            <i class="fas fa-shopping-cart" id="cart"></i> 
+        </div>
+        
+        <div id="welcome-message" class="welcome-message">
+            Welcome, <span id="user-name">Guest</span>!
+            <form action="logout.php" method="POST">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+    
+
+        <div id="login-popup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="close-login">&times;</span>
+                <h2>Login</h2>
+                <form action="auth.php" method="post">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="login-email" required>
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="login-password" required>
+                    <button type="submit" name="login">Login</button>
+                </form>
+            </div>
+        </div>
+    
+        <div id="register-popup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="close-register">&times;</span>
+                <h2>Register</h2>
+                <form action="auth.php" method="post">
+                    <label for="register-username">Username:</label>
+                    <input type="text" id="register-username" name="register-username" required>
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" name="register-email" required>
+                    <label for="register-password">Password:</label>
+                    <input type="password" id="register-password" name="register-password" required>
+                    <button type="submit" name="register">Register</button>
+                </form>
+            </div>
+        </div>
+        <!-- Cart Sidebar -->
+        <div id="cart-sidebar" class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <span class="close" id="close-cart">&times;</span>
+            </div>
+            <ul id="cart-items" class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </ul>
+            <div class="cart-footer">
+                <h3>Total: <span id="cart-total">Rs.0.00</span></h3>
+                <button class="btn">Checkout</button>
+            </div>
+        </div>
+       
+        <script src="scripts.js"></script>
+        <script src="cart.js"></script>
+      
+        <form action="#" class="search-bar">
+            <input type="search" name="search" id="1" placeholder="Search Here">
+        </form>
+    </header>
+
+    
+    <section class="home" id="home">
+        <div class="home-content">
+            <div class="inner-content">
+                <h3>Welcome To Happy&nbsp;<i class="fas fa-pizza-slice"></i>&nbsp;Pizza</h3>
+                <p>At Happy Pizza, we're more than just a pizza place— we're a slice of joy in your day!🍕✨ Order your favorite pizza online and get it delivered to your doorstep!</p>
+                <button class="btn" onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });">Menu</button>
+                
+            </div>
+            <div class="inner-content-img">
+                <img src="assets/logopiz.png" alt="img">
+            </div>
+        </div>
+    </section>
+</body>
+
+
+
+<section class="about" id="about">
+    <h4>About</h4>
+    <div class="about-sec">
+        <div class="img">
+            <img src="assets/logopiz.png" alt="img">
+        </div>
+        <div class="about-content">
+            <h3>Happy Pizza</h3>
+            <p>Our pizzas are crafted with the finest ingredients, sourced locally and internationally to guarantee freshness and flavor. 
+                From our classic Margherita to our signature gourmet creations, each pizza is a testament to our dedication to quality and taste. 
+                Our dough is made fresh daily, and our sauces are crafted from ripe,
+                 juicy tomatoes and a blend of secret spices that will tantalize your taste buds.</p>
+            <div class="about-inner">
+                <h5><i class="fas fa-arrow-alt-circle-right"></i>Good Quality</h5>
+                <h5><i class="fas fa-arrow-alt-circle-right"></i>Fresh Vagetables</h5>
+                <h5><i class="fas fa-arrow-alt-circle-right"></i>Available 24X7</h5>
+                <h5><i class="fas fa-arrow-alt-circle-right"></i>Best Price</h5>
+                <h5><i class="fas fa-arrow-alt-circle-right"></i>Best Quality</h5>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="service" id="service">
+    <h4>Services</h4>
+    <div class="service-content">
+        <div class="inner-box">
+            <img src="assets/bike.png" alt="">
+            <h2>Free Delivery</h2>
+            <p>Enjoy the convenience of having your favorite pizza delivered right to your door at no extra cost. At Happy Pizza,
+                 we believe in making your dining experience as effortless and enjoyable as possible—just order online, and we'll handle the rest!</p>
+        </div>
+        <div class="inner-box">
+            <img src="assets/pay.png" alt="">
+            <h2>Online Payment</h2>
+            <p>Make your ordering experience even smoother with our secure online payment option. Simply choose your favorite pizza, pay online,
+                 and relax—your order will be on its way to you in no time. Fast, easy, and hassle-free!</p>
+            <br>
+            <br>
+            
+        </div>
+        <div class="inner-box">
+            <img src="assets/fres.png" alt="">
+            <h2>Fresh Food</h2>
+            <p>At Happy Pizza, we pride ourselves on using only the freshest ingredients to craft our delicious pizzas. 
+            From crisp vegetables to premium cheeses and meats,
+            every bite is a testament to our commitment to quality and taste. Enjoy the vibrant flavors of our carefully prepared dishes!</p>
+        
+            
+        </div>
+    </div>
+</section>
+
+<section class="menu" id="menu">
+    <h4>Our Menu</h4>
+    <div class="menu-content">
+        <div class="in-box">
+            <i class="far fa-heart"></i>
+            <img src="assets/veg.png" alt="img" class="veg-icon">
+            <img src="assets/vegi.jpeg" alt="">
+            <div class="in-content">
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <h2>Vegi Margherita Pizza</h2>
+                    <div class="price">Rs.200.00</div>
+                    <button class="btn" onclick="addToCart({ name: 'Vegi Margherita Pizza', price: 200 })">Add to Cart <i class="fas fa-plus-circle"></i></button>
+
+                </div>
+            </div>
+        </div>
+        <div class="in-box">
+            <i class="far fa-heart"></i>
+            <img src="assets/veg.png" alt="img" class="veg-icon">
+            <img src="assets/to.jpeg" alt="">
+            <div class="in-content">
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <h2>Italian Cuisine Tomato Pizza</h2>
+                    <div class="price">Rs.250.00</div>
+                    
+                    <button class="btn" onclick="addToCart({ name: 'Italian Cuisine Tomato Pizza', price: 250 })">Add to Cart <i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="in-box">
+            <i class="far fa-heart"></i>
+            <img src="assets/not.jpeg" alt="img" class="veg-icon">
+            <img src="assets/saus.jpeg" alt="">
+            <div class="in-content">
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <h2>Pepperoni Pizza</h2>
+                    <div class="price">Rs.320.00</div>
+                    
+                    <button class="btn" onclick="addToCart({ name: 'Pepperoni Pizza', price: 320 })">Add to Cart <i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="in-box">
+            <i class="far fa-heart"></i>
+            <img src="assets/not.jpeg" alt="img" class="veg-icon">
+            <img src="assets/ham.jpeg" alt="">
+            <div class="in-content">
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <h2>Hamburger Calzone Pizza</h2>
+                    <div class="price">Rs.350.00</div>
+                    
+                    <button class="btn" onclick="addToCart({ name: 'Hamburger Calzone Pizza', price: 350 })">Add to Cart <i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="in-box">
+            <i class="far fa-heart"></i>
+            <img src="assets/not.jpeg" alt="img" class="veg-icon">
+            <img src="assets/barbecu.jpeg" alt="">
+            <div class="in-content">
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <h2>Barbecu Pizza</h2>
+                    <div class="price">Rs.420.00</div>
+                    
+                    <button class="btn" onclick="addToCart({ name: 'Barbecu Pizza', price: 420 })">Add to Cart <i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="in-box">
+            <i class="far fa-heart"></i>
+            <img src="assets/not.jpeg" alt="img" class="veg-icon">
+            <img src="assets/mauritianpizza.jpeg" alt="">
+            <div class="in-content">
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <h2>King,Subash,special Pizza</h2>
+                    <div class="price">Rs.450.00</div>
+                    
+                    <button class="btn" onclick="addToCart({ name: 'King,Subash,special Pizza', price: 450 })">Add to Cart <i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="in-box">
+            <i class="far fa-heart"></i>
+            <img src="assets/not.jpeg" alt="img" class="veg-icon">
+            <img src="assets/extraa chese.jpeg" alt="">
+            <div class="in-content">
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <h2>Lagratelle,delux Pizza</h2>
+                    <div class="price">Rs.520.00</div>
+                    
+                    <button class="btn" onclick="addToCart({ name: 'Lagratelle,delux Pizza', price: 520 })">Add to Cart <i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="in-box">
+            <i class="far fa-heart"></i>
+            <img src="assets/not.jpeg" alt="img" class="veg-icon">
+            <img src="assets/cal.jpeg" alt="">
+            <div class="in-content">
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <h2>California Pizza</h2>
+                    <div class="price">Rs.325.00</div>
+                    
+                    <button class="btn" onclick="addToCart({ name: 'California Pizza', price: 325 })">Add to Cart <i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="in-box">
+            <i class="far fa-heart"></i>
+            <img src="assets/not.jpeg" alt="img" class="veg-icon">
+            <img src="assets/ma.jpeg" alt="">
+            <div class="in-content">
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <h2>Mauritian,margarita Pizza</h2>
+                    <div class="price">Rs.250.00</div>
+                    
+                    <button class="btn" onclick="addToCart({ name: 'Mauritian,margarita Pizza', price: 250 })">Add to Cart <i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="contact" id="contact">
+    <div class="contact-sec">
+        <div class="contact-inner">
+            <div class="contact-inner-col">
+                <img src="assets/logopiz.png" alt="img" class="image">
+            </div>
+            <div class="contact-inner-col">
+                <h1>Contact US&nbsp;<i class="fas fa-paper-plane"></i></h1>
+                <p>Happy Pizza Eben, Cybercity In the heart of Mauritius
+                </p>
+                <p>We Want To Hear From You, Write Us:</p>
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Please Enter Your Name" required>
+                    <input type="email" name="email" placeholder="Please Enter Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Your Message" cols="30" rows="10"></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d24199.519458423838!2d57.506615342019444!3d-20.218421179393964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smu!4v1723142867910!5m2!1sen!2smu"
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="copyright">
+            <p>Design By&copy; Arpan & Sakshi</p>
+        </div>
+    </div>
+</footer>
+
+<script src="email.js" type="module"></script>
+
+
+<script>
+    let searchbtn = document.querySelector('#search');
+    let searchfrm = document.querySelector('.head .search-bar');
+
+    searchbtn.onclick = () => {
+        searchfrm.classList.toggle('active');
+        menu.classList.remove('active');
+    }
+
+    let menu = document.querySelector('.head .navbar');
+    document.querySelector('#bars').onclick = () => {
+        menu.classList.toggle('active');
+        searchfrm.classList.remove('active');
+
+    }
+    window.onscroll = () => {
+        menu.classList.remove('active');
+        searchfrm.classList.remove('active');
+    }
+</script>
+
+</html>
